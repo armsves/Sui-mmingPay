@@ -2,172 +2,82 @@
 // SPDX-License-Identifier: Apache-2.0
 
 import React from 'react';
-import { ConnectButton, useCurrentAccount } from '@mysten/dapp-kit';
-import { Box, Button, Card, Container, Flex, Grid } from '@radix-ui/themes';
-import { CreateAllowlist } from './CreateAllowlist';
-import { Allowlist } from './Allowlist';
-import WalrusUpload from './EncryptAndUpload';
-import { useState } from 'react';
-import { CreateService } from './CreateSubscriptionService';
-import FeedsToSubscribe from './SubscriptionView';
-import { Service } from './SubscriptionService';
-import { BrowserRouter, Routes, Route, Link } from 'react-router-dom';
-import { AllAllowlist } from './OwnedAllowlists';
-import { AllServices } from './OwnedSubscriptionServices';
-import Feeds from './AllowlistView';
-
-function LandingPage() {
-  return (
-    <Grid columns="2" gap="4">
-      <Card>
-        <Flex direction="column" gap="2" align="center" style={{ height: '100%' }}>
-          <div style={{ textAlign: 'center' }}>
-            <h2>Allowlist Example</h2>
-            <p>
-              Shows how a creator can define an allowlist based access. The creator first creates an
-              allowlist and can add or remove users in the list. The creator can then associate
-              encrypted files to the allowlist. Only users in the allowlist have access to decrypt
-              the files.
-            </p>
-          </div>
-          <Link to="/allowlist-example">
-            <Button size="3">Try it</Button>
-          </Link>
-        </Flex>
-      </Card>
-      <Card>
-        <Flex direction="column" gap="2" align="center" style={{ height: '100%' }}>
-          <div style={{ textAlign: 'center' }}>
-            <h2>Subscription Example</h2>
-            <p>
-              Shows how a creator can define a subscription based access to its published files. The
-              creator defines subcription fee and how long a subscription is valid for. The creator
-              can then associate encrypted files to the service. Only users who have purchased a
-              subscription (NFT) have access to decrypt the files, along with the condition that the
-              subscription must not have expired (i.e. the subscription creation timestamp plus the
-              TTL is smaller than the current clock time).
-            </p>
-          </div>
-          <Link to="/subscription-example">
-            <Button size="3">Try it</Button>
-          </Link>
-        </Flex>
-      </Card>
-    </Grid>
-  );
-}
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import { Navbar } from './components/Navbar';
+import { Footer } from './components/Footer';
+import { LandingPage } from './pages/LandingPage';
+import { SubmitInvoicePage } from './pages/SubmitInvoicePage';
+import { AdminPage } from './pages/AdminPage';
 
 function App() {
-  const currentAccount = useCurrentAccount();
-  const [recipientAllowlist, setRecipientAllowlist] = useState<string>('');
-  const [capId, setCapId] = useState<string>('');
   return (
-    <Container>
-      <Flex position="sticky" px="4" py="2" justify="between">
-        <h1 className="text-4xl font-bold m-4 mb-8">Seal Example Apps</h1>
-        {/* <p>TODO: add seal logo</p> */}
-        <Box>
-          <ConnectButton />
-        </Box>
-      </Flex>
-      <Card style={{ marginBottom: '2rem' }}>
-        <p>
-          1. Code is available{' '}
-          <a href="https://github.com/MystenLabs/seal/tree/main/examples">here</a>.
-        </p>
-        <p>
-          2. These examples are for Testnet only. Make sure you wallet is set to Testnet and has
-          some balance (can request from <a href="https://faucet.sui.io/">faucet.sui.io</a>).
-        </p>
-        <p>
-          3. Blobs are only stored on Walrus Testnet for 1 epoch by default, older files cannot be
-          retrieved even if you have access.
-        </p>
-        <p>
-          4. Currently only image files are supported, and the UI is minimal, designed for demo
-          purposes only!
-        </p>
-        <p>
-          5. If you encounter issues when uploading to or reading from Walrus using the example
-          frontend, it usually means the public publisher and/or aggregator configured in
-          `vite.config.ts` is not available. This example does not guarantee performance and
-          downstream service quality and is only for demo purpose. In your own application, consider
-          running your own publisher and/or aggregator according to{' '}
-          <a href="https://docs.wal.app/operator-guide/aggregator.html#operating-an-aggregator-or-publisher">
-            the documentation
-          </a>
-          . Or consider choosing and monitoring other reliable public publisher and aggregator from{' '}
-          <a href="https://docs.wal.app/usage/web-api.html#public-services">the list</a>.
-        </p>
-      </Card>
-      {currentAccount ? (
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<LandingPage />} />
-            <Route
-              path="/allowlist-example/*"
-              element={
-                <Routes>
-                  <Route path="/" element={<CreateAllowlist />} />
-                  <Route
-                    path="/admin/allowlist/:id"
-                    element={
-                      <div>
-                        <Allowlist
-                          setRecipientAllowlist={setRecipientAllowlist}
-                          setCapId={setCapId}
-                        />
-                        <WalrusUpload
-                          policyObject={recipientAllowlist}
-                          cap_id={capId}
-                          moduleName="allowlist"
-                        />
-                      </div>
-                    }
-                  />
-                  <Route path="/admin/allowlists" element={<AllAllowlist />} />
-                  <Route
-                    path="/view/allowlist/:id"
-                    element={<Feeds suiAddress={currentAccount.address} />}
-                  />
-                </Routes>
-              }
-            />
-            <Route
-              path="/subscription-example/*"
-              element={
-                <Routes>
-                  <Route path="/" element={<CreateService />} />
-                  <Route
-                    path="/admin/service/:id"
-                    element={
-                      <div>
-                        <Service
-                          setRecipientAllowlist={setRecipientAllowlist}
-                          setCapId={setCapId}
-                        />
-                        <WalrusUpload
-                          policyObject={recipientAllowlist}
-                          cap_id={capId}
-                          moduleName="subscription"
-                        />
-                      </div>
-                    }
-                  />
-                  <Route path="/admin/services" element={<AllServices />} />
-                  <Route
-                    path="/view/service/:id"
-                    element={<FeedsToSubscribe suiAddress={currentAccount.address} />}
-                  />
-                </Routes>
-              }
-            />
-          </Routes>
-        </BrowserRouter>
-      ) : (
-        <p>Please connect your wallet to continue</p>
-      )}
-    </Container>
+    <BrowserRouter>
+      <div style={{
+        minHeight: '100vh',
+        display: 'flex',
+        flexDirection: 'column',
+        position: 'relative',
+        overflow: 'hidden',
+        background: 'linear-gradient(180deg, #42a5f5 0%, #90caf9 100%)'
+      }}>
+        {/* SVG Animated Waves Layer */}
+        <div style={{ position: 'absolute', inset: 0, zIndex: 0, pointerEvents: 'none' }}>
+          <svg width="100%" height="100%" viewBox="0 0 1600 900" preserveAspectRatio="none" style={{ position: 'absolute', left: 0, top: 0, width: '100%', height: '100%' }}>
+            <defs>
+              <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0%" stopColor="#42a5f5" stopOpacity="0.7" />
+                <stop offset="100%" stopColor="#90caf9" stopOpacity="0.7" />
+              </linearGradient>
+            </defs>
+            <g>
+              <path id="wave1" fill="url(#waveGradient)" fillOpacity="0.7">
+                <animate attributeName="d" dur="8s" repeatCount="indefinite"
+                  values="M0,600 Q400,500 800,600 T1600,600 V900 H0 Z;
+                          M0,600 Q400,700 800,600 T1600,600 V900 H0 Z;
+                          M0,600 Q400,500 800,600 T1600,600 V900 H0 Z" />
+                M0,600 Q400,500 800,600 T1600,600 V900 H0 Z
+              </path>
+              <path id="wave2" fill="#e3f2fd" fillOpacity="0.3">
+                <animate attributeName="d" dur="10s" repeatCount="indefinite"
+                  values="M0,650 Q400,600 800,650 T1600,650 V900 H0 Z;
+                          M0,650 Q400,750 800,650 T1600,650 V900 H0 Z;
+                          M0,650 Q400,600 800,650 T1600,650 V900 H0 Z" />
+                M0,650 Q400,600 800,650 T1600,650 V900 H0 Z
+              </path>
+            </g>
+          </svg>
+        </div>
+        {/* Sui logo and sun reflections remain unchanged below... */}
+        <div style={{
+          position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)',
+          width: '300px', height: '300px', backgroundImage: 'url(/sui-logo.png)',
+          backgroundSize: 'contain', backgroundRepeat: 'no-repeat', backgroundPosition: 'center',
+          opacity: 0.1, zIndex: 1, pointerEvents: 'none', filter: 'brightness(0.8) contrast(1.2)'
+        }} />
+        <div style={{
+          position: 'fixed', top: '15%', right: '20%', width: '120px', height: '120px',
+          background: 'radial-gradient(circle, rgba(255, 215, 0, 0.4) 0%, rgba(255, 235, 59, 0.2) 40%, transparent 70%)',
+          borderRadius: '50%', zIndex: 1, pointerEvents: 'none'
+        }} />
+        <div style={{
+          position: 'fixed', top: '70%', left: '15%', width: '80px', height: '80px',
+          background: 'radial-gradient(circle, rgba(255, 215, 0, 0.3) 0%, rgba(255, 235, 59, 0.15) 50%, transparent 70%)',
+          borderRadius: '50%', zIndex: 1, pointerEvents: 'none'
+        }} />
+        
+        <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+          <Navbar />
+          <main style={{ flex: 1 }}>
+            <Routes>
+              <Route path="/" element={<LandingPage />} />
+              <Route path="/submit-invoice" element={<SubmitInvoicePage />} />
+              <Route path="/admin" element={<AdminPage />} />
+            </Routes>
+          </main>
+          <Footer />
+        </div>
+      </div>
+    </BrowserRouter>
   );
 }
 
