@@ -5,14 +5,14 @@
       "version": "1.1.0",
       "mode": "burning",
       "paused": false,
-      "owner": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125",
-      "manager": "0x91E65a5b7633A3cC42F228776aDf041ef35fcaCA",
+      "owner": "0x2191433264B3E4F50439b3822323EC14448B192c",
+      "manager": "0x39dC42359923DB4443Ad87cAF42bdD5D4b672b6a",
       "token": "0x74A786d6d0397B44d49F9feA1bcD9FC8286D9046",
       "transceivers": {
         "threshold": 1,
         "wormhole": {
-          "address": "0xcACefe0FFC02875bEB27E3EC1C5C6eDB5e9e6184",
-          "pauser": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125",
+          "address": "0x86F7F28f67aa3564FDf84EAdAD00f28c7604a63b",
+          "pauser": "0x2191433264B3E4F50439b3822323EC14448B192c",
           "executor": true
         }
       },
@@ -20,7 +20,7 @@
         "outbound": "184467440737.095516150000000000",
         "inbound": {}
       },
-      "pauser": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125"
+      "pauser": "0x2191433264B3E4F50439b3822323EC14448B192c"
     },
     "Sui": {
       "version": "dev",

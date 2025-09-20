@@ -85,6 +85,10 @@ sui client call \
 source .env && ntt add-chain Sui --latest --mode locking --token 0xa6b1ccc3420deb74565a67da7a2d50c1c73d69332e71fd4fb9a168470504fd6d::my_coin::MY_COIN
 ```
 
+### Update deployment.json changes
+
+ntt push
+
 ### Export Sui Private Key
 
 ```bash

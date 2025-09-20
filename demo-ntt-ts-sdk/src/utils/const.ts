@@ -21,12 +21,12 @@ export const TEST_NTT_TOKENS: NttContracts = {
   // },
   Sepolia: {
     token: "0x74A786d6d0397B44d49F9feA1bcD9FC8286D9046",
-    manager: "0x91E65a5b7633A3cC42F228776aDf041ef35fcaCA",
-    transceiver: { wormhole: "0xcACefe0FFC02875bEB27E3EC1C5C6eDB5e9e6184" },
+    manager: "0x39dC42359923DB4443Ad87cAF42bdD5D4b672b6a",
+    transceiver: { wormhole: "0x86F7F28f67aa3564FDf84EAdAD00f28c7604a63b" },
   },
   Sui: {
-    token: "0x21c6c84e85ff87bc62bcc70e4cbc6fa2492050465921aa1399350f7fa2b45321::my_coin::MY_COIN",
-    manager: "0x54f201c1d5fcfe674cea78bde237558b6ac9053c034d055e50a43465d832f09d",
-    transceiver: { wormhole: "0x363f70428683d3a3844e95dde224045cacdeb77de69c946851a58779ff40f4c6" },
+    token: "0xa6b1ccc3420deb74565a67da7a2d50c1c73d69332e71fd4fb9a168470504fd6d::my_coin::MY_COIN",
+    manager: "0xd6183bf59ec3c9fb8bb06c86ee8a524c7f74575f2fc7632466699e53ffd47ab6",
+    transceiver: { wormhole: "0x3c2ff0ae785dd90f49615812967320901f7a642fd519dbde5e9efa0e98f2c33c" },
   },
 };
