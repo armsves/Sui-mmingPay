@@ -5,7 +5,7 @@ import { ExternalLinkIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 export function Footer() {
     return (
         <footer style={{
-            //backgroundColor: 'transparent',
+            backgroundColor: 'rgba(255,255,255,0.30)',
             borderTop: 'none',
             boxShadow: 'none',
             padding: '10px 0'

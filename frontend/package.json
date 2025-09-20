@@ -33,6 +33,7 @@
     "@radix-ui/react-slot": "^1.1.2",
     "@radix-ui/themes": "^3.2.1",
     "@tanstack/react-query": "^5.71.10",
+    "aos": "^2.3.4",
     "clsx": "^2.1.1",
     "idb-keyval": "3.0.0",
     "lucide-react": "0.487.0",

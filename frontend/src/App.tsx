@@ -1,15 +1,28 @@
 // Copyright (c), Mysten Labs, Inc.
 // SPDX-License-Identifier: Apache-2.0
 
-import React from 'react';
+import React, { useState } from 'react';
+import { useCurrentAccount } from '@mysten/dapp-kit';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { Navbar } from './components/Navbar';
 import { Footer } from './components/Footer';
 import { LandingPage } from './pages/LandingPage';
 import { SubmitInvoicePage } from './pages/SubmitInvoicePage';
 import { AdminPage } from './pages/AdminPage';
+import { CreateAllowlist } from './CreateAllowlist';
+import { Allowlist } from './Allowlist';
+import { AllAllowlist } from './OwnedAllowlists';
+import AllowlistView from './AllowlistView';
+import { CreateService } from './CreateSubscriptionService';
+import { Service } from './SubscriptionService';
+import { AllServices } from './OwnedSubscriptionServices';
+import SubscriptionView from './SubscriptionView';
 
 function App() {
+  const [recipientAllowlist, setRecipientAllowlist] = useState<string>('');
+  const [capId, setCapId] = useState<string>('');
+  const currentAccount = useCurrentAccount();
+
   return (
     <BrowserRouter>
       <div style={{
@@ -28,7 +41,17 @@ function App() {
           backgroundImage: 'url(/background.jpg)',
           backgroundRepeat: 'repeat',
           backgroundSize: 'auto',
-          opacity: 0.7
+          opacity: 0.5,
+          //filter: 'blur(2px) brightness(0.96)'
+        }} />
+        {/* Gradient overlay for contrast */}
+        <div style={{
+          position: 'absolute',
+          inset: 0,
+          zIndex: 2,
+          pointerEvents: 'none',
+          background: 'linear-gradient(120deg, rgba(173,216,230,0.35) 0%, rgba(255,255,255,0.7) 100%)',
+          mixBlendMode: 'overlay',
         }} />
         {/* Sui Drop image in the absolute center, above background but below content */}
         <img
@@ -53,6 +76,22 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/submit-invoice" element={<SubmitInvoicePage />} />
               <Route path="/admin" element={<AdminPage />} />
+              <Route path="/allowlist-example/*" element={
+                <Routes>
+                  <Route path="/" element={<CreateAllowlist />} />
+                  <Route path="admin/allowlist/:id" element={<Allowlist setRecipientAllowlist={setRecipientAllowlist} setCapId={setCapId} />} />
+                  <Route path="admin/allowlists" element={<AllAllowlist />} />
+                  <Route path="view/allowlist/:id" element={<AllowlistView suiAddress={currentAccount?.address || ''} />} />
+                </Routes>
+              } />
+              <Route path="/subscription-example/*" element={
+                <Routes>
+                  <Route path="/" element={<CreateService />} />
+                  <Route path="admin/service/:id" element={<Service setRecipientAllowlist={setRecipientAllowlist} setCapId={setCapId} />} />
+                  <Route path="admin/services" element={<AllServices />} />
+                  <Route path="view/service/:id" element={<SubscriptionView suiAddress={currentAccount?.address || ''} />} />
+                </Routes>
+              } />
             </Routes>
           </main>
           <Footer />
