@@ -61,9 +61,12 @@ import { NttExecutorRoute, NttRoute } from "@wormhole-foundation/sdk-route-ntt";
     // Otherwise, return the env var or error
     const val = process.env[key];
     if (!val) {
-      if (dev) return dev;
+      if (dev) {
+        console.warn(`Using default value for ${key}. For production, set this in your .env file.`);
+        return dev;
+      }
       throw new Error(
-        `Missing env var ${key}, did you forget to set values in '.env'?`
+        `Missing env var ${key}, did you forget to set values in '.env'? Please create a .env file with your private keys and mnemonics.`
       );
     }
   
