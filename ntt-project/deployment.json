@@ -1,0 +1,25 @@
+{
+  "network": "Testnet",
+  "chains": {
+    "Sui": {
+      "version": "dev",
+      "mode": "locking",
+      "paused": false,
+      "owner": "0x9aa84eab6663d054a047d2debae9ca1d2a571bb421600c2f1f3162ae2bde91eb",
+      "manager": "0xb163cfaee9a596410d2997500783f1756332c2391dcf894bd3ddd6cf301e8592",
+      "token": "0x25172c5f5f4ab0dab2da33d71013eafc44a37e171d18fec9c1598ca77859eda0::my_coin::MY_COIN",
+      "transceivers": {
+        "threshold": 1,
+        "wormhole": {
+          "address": "0x78d7c303fc44f8ba8ccb85bc8424745796e1472bd2d6c873d7d0b0c32fe227cb",
+          "executor": true
+        }
+      },
+      "limits": {
+        "outbound": "18446744073.709551615",
+        "inbound": {}
+      },
+      "pauser": "0x9aa84eab6663d054a047d2debae9ca1d2a571bb421600c2f1f3162ae2bde91eb"
+    }
+  }
+}
