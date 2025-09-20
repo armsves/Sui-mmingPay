@@ -66,6 +66,10 @@ export function CreateAllowlist() {
   return (
     <Card>
       <h2 style={{ marginBottom: '1rem' }}>Admin View: Allowlist</h2>
+      <div style={{ marginBottom: '1rem', color: '#555', fontSize: '1rem' }}>
+        <strong>Why is creating an allowlist difficult?</strong><br />
+        Creating an allowlist involves securely managing user identities, ensuring only authorized participants are included, and handling blockchain transactions reliably. It requires careful validation, gas budgeting, and error handling to prevent unauthorized access and ensure the integrity of the list. Additionally, integrating with smart contracts and maintaining up-to-date permissions can be complex and error-prone, especially in decentralized environments.
+      </div>
       <Flex direction="row" gap="2" justify="start">
         <input placeholder="Allowlist Name" onChange={(e) => setName(e.target.value)} />
         <Button

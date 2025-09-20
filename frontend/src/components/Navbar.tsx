@@ -73,9 +73,10 @@ export function Navbar() {
 
           {/* Navigation Links */}
           <Flex align="center" gap="6">
-            <Link to="/submit-invoice" style={{ textDecoration: 'none' }}>
+            
+            <Link to="/create-allowlist-upload" style={{ textDecoration: 'none' }}>
               <Button size="4" style={{
-                background: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',
+                background: 'linear-gradient(135deg, #10b981 0%, #059669 100%)',
                 color: 'white',
                 padding: '12px 32px',
                 borderRadius: '12px',
@@ -88,12 +89,13 @@ export function Navbar() {
                 gap: '8px',
                 transition: 'background 0.2s, box-shadow 0.2s',
               }}
-                onMouseOver={e => e.currentTarget.style.background = 'linear-gradient(135deg, #1565c0 0%, #1976d2 100%)'}
-                onMouseOut={e => e.currentTarget.style.background = 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)'}
+                onMouseOver={e => e.currentTarget.style.background = 'linear-gradient(135deg, #059669 0%, #10b981 100%)'}
+                onMouseOut={e => e.currentTarget.style.background = 'linear-gradient(135deg, #10b981 0%, #059669 100%)'}
               >
                 <span role="img" aria-label="invoice">📝</span> Submit an Invoice
-              </Button>
+                </Button>
             </Link>
+
             <Link to="/admin" style={{ textDecoration: 'none' }}>
               <Button size="4" style={{
                 background: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',

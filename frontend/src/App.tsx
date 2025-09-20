@@ -9,6 +9,7 @@ import { Footer } from './components/Footer';
 import { LandingPage } from './pages/LandingPage';
 import { SubmitInvoicePage } from './pages/SubmitInvoicePage';
 import { AdminPage } from './pages/AdminPage';
+import { CreateAllowlistWithUploadPage } from './pages/CreateAllowlistWithUploadPage';
 import { CreateAllowlist } from './CreateAllowlist';
 import { Allowlist } from './Allowlist';
 import { AllAllowlist } from './OwnedAllowlists';
@@ -17,6 +18,7 @@ import { CreateService } from './CreateSubscriptionService';
 import { Service } from './SubscriptionService';
 import { AllServices } from './OwnedSubscriptionServices';
 import SubscriptionView from './SubscriptionView';
+import DemoAppPage from './pages/DemoAppPage';
 
 function App() {
   const [recipientAllowlist, setRecipientAllowlist] = useState<string>('');
@@ -76,6 +78,8 @@ function App() {
               <Route path="/" element={<LandingPage />} />
               <Route path="/submit-invoice" element={<SubmitInvoicePage />} />
               <Route path="/admin" element={<AdminPage />} />
+              <Route path="/create-allowlist-upload" element={<CreateAllowlistWithUploadPage />} />
+                <Route path="/demo-app/*" element={<DemoAppPage />} />
               <Route path="/allowlist-example/*" element={
                 <Routes>
                   <Route path="/" element={<CreateAllowlist />} />

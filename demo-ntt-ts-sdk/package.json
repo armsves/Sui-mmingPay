@@ -3,6 +3,8 @@
     "typescript": "^5.5.4"
   },
   "dependencies": {
+    "@mysten/sui": "^1.38.0",
+    "@mysten/sui.js": "^0.54.1",
     "@wormhole-foundation/sdk": "3.4.1",
     "@wormhole-foundation/sdk-definitions-ntt": "2.0.0",
     "@wormhole-foundation/sdk-evm-ntt": "2.0.0",

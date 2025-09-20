@@ -12,7 +12,7 @@ import {
   SessionKey,
   type ExportedSessionKey
 } from '@mysten/seal';
-import { useParams, Link } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 import { downloadAndDecrypt, getObjectExplorerLink, MoveCallConstructor } from './utils';
 import { set, get } from 'idb-keyval';
 import { getFullnodeUrl, SuiClient } from '@mysten/sui/client';
@@ -167,15 +167,6 @@ const Feeds: React.FC<{ suiAddress: string }> = ({ suiAddress }) => {
         Files for Allowlist {feed?.allowlistName} (ID{' '}
         {feed?.allowlistId && getObjectExplorerLink(feed.allowlistId)})
       </h2>
-        {/* Navigation Links */}
-        <Flex justify="center" gap="4" style={{ marginBottom: '2rem' }}>
-          <Link to="/allowlist-example">
-            <Button size="2" variant="soft">Allowlist Example</Button>
-          </Link>
-          <Link to="/subscription-example">
-            <Button size="2" variant="soft">Subscription Example</Button>
-          </Link>
-        </Flex>
       {feed === undefined ? (
         <p>No files found for this allowlist.</p>
       ) : (

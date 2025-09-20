@@ -10,7 +10,6 @@ import {
   } from "@wormhole-foundation/sdk";
   
   import evm from "@wormhole-foundation/sdk/platforms/evm";
-  import solana from "@wormhole-foundation/sdk/platforms/solana";
   import sui from "@wormhole-foundation/sdk/platforms/sui";
 import { NttContracts, SEPOLIA_PRIVATE_KEY, TEST_NTT_TOKENS, TESTNET_SUI_MNEMONIC} from "./const";
 import { NttExecutorRoute, NttRoute } from "@wormhole-foundation/sdk-route-ntt";

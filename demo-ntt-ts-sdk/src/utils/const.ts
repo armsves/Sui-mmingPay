@@ -1,30 +1,29 @@
 import { Ntt } from "@wormhole-foundation/sdk-definitions-ntt";
-import { Chain, encoding } from "@wormhole-foundation/sdk";
 
+// Extend Ntt.Contracts to allow coinObjectId for Sui
+export type SuiContracts = Ntt.Contracts & { coinObjectId?: string };
 export type NttContracts = {
-  [key in Chain]?: Ntt.Contracts;
+  [key in Chain]?: Ntt.Contracts | SuiContracts;
 };
+import { Chain, encoding } from "@wormhole-foundation/sdk";
+import * as dotenv from "dotenv";
+dotenv.config();
+// Only keep the extended version
 
 export const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY || "";
 export const TESTNET_SUI_MNEMONIC = process.env.TESTNET_SUI_MNEMONIC || ""; 
 
 export const TEST_NTT_TOKENS: NttContracts = {
-  Solana: {
-    token: "ANRdVy8fvhiJqXccFPpZijty5jQqkBp5Xjw4NXL1CsU1",
-    manager: "nasiB9hbB1s5ZWXAR54fjr3Y4HVTTzJMXNPAuedggQA",
-    transceiver: {
-      wormhole: "Ba8FkdiKmNuGiwiZ6PVzkyR7uE2kMGV1aAYUh3XReLuA",
-    },
-    quoter: "Nqd6XqA8LbsCuG8MLWWuP865NV6jR1MbXeKxD4HLKDJ"
-  },
   Sepolia: {
-    token: "0x528007Fab32134522c44757E31a6d22ba433b5a8",
-    manager: "0xBaaB509AAd2fC0b041669A86750631AA76688BeB",
-    transceiver: { wormhole: "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125" },
+    token: "0x0741a499355f2683332Ab2eC00c0eb9BCaec445d",
+    manager: "0x2e8b2eDE7eDEf610f9f2FE6D684108f3EBD5E3C5",
+    transceiver: { wormhole: "0x77f60d5CE2DAFe8154b17FD0bd648B8D448D9370" },
   },
   Sui: {
-    token: "0x25172c5f5f4ab0dab2da33d71013eafc44a37e171d18fec9c1598ca77859eda0::my_coin::MY_COIN",
-    manager: "0xb163cfaee9a596410d2997500783f1756332c2391dcf894bd3ddd6cf301e8592",
-    transceiver: { wormhole: "0x78d7c303fc44f8ba8ccb85bc8424745796e1472bd2d6c873d7d0b0c32fe227cb" },
+    token: "0xb1ef68826d33b00d07bbb190ffb757c9f388a27c973f9808ad3d8f929c485330::my_coin::MY_COIN",
+  // coinObjectId is the actual Sui coin object owned by the sender
+  coinObjectId: "0x22837996ca512165d3dd29ef504093c34161e3dd1546ebb6493b466e6e05c199",
+    manager: "0xf36991b8e071594a50ba175ef3ca3128610e61371bc989770567f0c08fbaf7af",
+    transceiver: { wormhole: "0xc18841129e9b8358b1d9a7b1e1b3b50728fa079e65854749cd052d0e86ebd8de" },
   },
 };

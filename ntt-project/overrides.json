@@ -1,0 +1,7 @@
+{
+  "chains": {
+    "Sui": {
+      "rpc": "https://fullnode.testnet.sui.io:443"
+    }
+  }
+}

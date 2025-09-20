@@ -22,22 +22,26 @@ import { routes } from "@wormhole-foundation/sdk";
 (async function () {
   // TODO: change to "Mainnet" for mainnet
   const network = "Testnet"; 
-  const wh = new Wormhole(network, [solana.Platform, evm.Platform, sui.Platform], {
+  // Instantiate Wormhole for Testnet with EVM and Sui platforms
+  const wh = new Wormhole(network, [evm.Platform, sui.Platform], {
     // optional way to use private RPCs, especially recommended for mainnet 
-    //   "chains": {
-    //     "Sui": {
-    //       "rpc": "http://127.0.0.1:8546"
+    //   chains: {
+    //     Sui: {
+    //       rpc: "http://127.0.0.1:8546"
     //     },
-    //     "Solana": {
-    //       "rpc": "http://127.0.0.1:8899"
+    //     Solana: {
+    //       rpc: "http://127.0.0.1:8899"
     //     }
     //   }
   });
-  const src = wh.getChain("Solana");
-  const dst = wh.getChain("Sui");
+  // Instantiate the executorRoute class with Wormhole instance
+
+  const src = wh.getChain("Sui");
+  const dst = wh.getChain("Sepolia");
   const srcSigner = await getSigner(src);
   // TODO: change destination address 
-  const dstAddress: ChainAddress = Wormhole.chainAddress("Sui","0xa43");
+  const dstSigner = await getSigner(dst);
+  const dstAddress: ChainAddress = dstSigner.address;
   console.log("Source signer address:", srcSigner.address.address);
 
   const srcNtt = await src.getProtocol("Ntt", {
@@ -50,6 +54,7 @@ import { routes } from "@wormhole-foundation/sdk";
   let executorConfig = convertToExecutorConfig(TEST_NTT_TOKENS);
   // TODO: optional override of the msgValue for transfers to Solana
   // NTT transfers to EVM chains should set the msgValue to 0
+  /*
   executorConfig.referrerFee = {
     feeDbps: 0n, // No referrer fee
     perTokenOverrides: {
@@ -59,7 +64,7 @@ import { routes } from "@wormhole-foundation/sdk";
         }
       }
     }
-  };
+  };*/
   const executorRoute = nttExecutorRoute(executorConfig);
   const routeInstance = new executorRoute(wh);
 

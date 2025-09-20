@@ -13,8 +13,8 @@ PROJECT_ROOT="$(cd "$SCRIPT_DIR/../.." && pwd)"
 cd "$PROJECT_ROOT"
 
 # Default values
-NETWORK="local"
-SUI_RPC_URL="http://127.0.0.1:9000"
+NETWORK="sui/testnet"
+SUI_RPC_URL="https://fullnode.testnet.sui.io:443"
 DEPLOYMENT_FILE="deployment.json"
 OVERRIDES_FILE="overrides.json"
 KEEP_ALIVE=false
@@ -165,7 +165,7 @@ fi
 
 # Initialize NTT deployment
 rm -rf "$DEPLOYMENT_FILE"
-ntt init Devnet
+ntt init Testnet
 
 # Create a test token (using SUI for simplicity in this test)
 # In a real deployment, you would create your own token type
@@ -181,7 +181,8 @@ ntt add-chain Sui \
     --yes \
     --local \
     --sui-gas-budget 500000000 \
-    --sui-wormhole-state "0xd6d208df9266c35caa7cb1d974feac206319adb5d3b45dc139d328b8f04cfafa"
+    --sui-wormhole-state "0xd6d208df9266c35caa7cb1d974feac206319adb5d3b45dc139d328b8f04cfafa" \
+    --sui-treasury-cap "0x751d8ff60eb3c4d4e531c711af24e9bebd9c5e62fcff3d6dd066ae369f2ab620"
 
 # Get deployment status
 echo "Getting deployment status..."
@@ -205,7 +206,7 @@ ntt manual set-peer Ethereum "$MOCK_ETHEREUM_MANAGER" \
     --token-decimals "$ETHEREUM_TOKEN_DECIMALS" \
     --inbound-limit "$INBOUND_LIMIT" \
     --path "$DEPLOYMENT_FILE" \
-    --network Devnet || {
+    --network Testnet || {
     echo "setPeer test failed, but continuing..."
 }
 

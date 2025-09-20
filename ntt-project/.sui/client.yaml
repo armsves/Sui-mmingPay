@@ -1,6 +1,6 @@
 ---
 keystore:
-  File: /Users/giovannifulin/Documents/GitHub/Sui-mmingPay/ntt-project/.sui/sui.keystore
+  File: /home/armsve/suimmingSeoul2025/Sui-mmingPay/ntt-project/.sui/sui.keystore
 external_keys: ~
 envs:
   - alias: local
@@ -8,7 +8,7 @@ envs:
     ws: ~
     basic_auth: ~
   - alias: testnet
-    rpc: "https://fullnode.testnet.sui.io"
+    rpc: "https://fullnode.testnet.sui.io:443"
     ws: ~
     basic_auth: ~
 active_env: testnet
