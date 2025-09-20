@@ -11,7 +11,7 @@ export function LandingPage() {
           {/* Hero Section */}
           <Box style={{ textAlign: 'center' }}>
             <Text size="4" style={{ 
-              color: '#666', 
+              color: '#1565c0', 
               maxWidth: '700px', 
               margin: '0 auto', 
               display: 'block', 
@@ -59,7 +59,7 @@ export function LandingPage() {
                     <LightningBoltIcon style={{ width: '32px', height: '32px', color: 'white' }} />
                   </div>
                   <Text size="5" weight="bold" style={{ color: '#1a1a1a' }}>Fast Payments</Text>
-                  <Text size="3" style={{ color: '#666', textAlign: 'center', lineHeight: '1.5' }}>
+                  <Text size="3" style={{ color: '#1565c0', textAlign: 'center', lineHeight: '1.5' }}>
                     Lightning-fast transactions on the Sui blockchain with minimal fees
                   </Text>
                 </Flex>
@@ -86,7 +86,7 @@ export function LandingPage() {
                     <LockClosedIcon style={{ width: '32px', height: '32px', color: 'white' }} />
                   </div>
                   <Text size="5" weight="bold" style={{ color: '#1a1a1a' }}>Secure</Text>
-                  <Text size="3" style={{ color: '#666', textAlign: 'center', lineHeight: '1.5' }}>
+                  <Text size="3" style={{ color: '#1565c0', textAlign: 'center', lineHeight: '1.5' }}>
                     Built on blockchain technology ensuring transparency and security
                   </Text>
                 </Flex>
@@ -113,7 +113,7 @@ export function LandingPage() {
                     <GlobeIcon style={{ width: '32px', height: '32px', color: 'white' }} />
                   </div>
                   <Text size="5" weight="bold" style={{ color: '#1a1a1a' }}>Global</Text>
-                  <Text size="3" style={{ color: '#666', textAlign: 'center', lineHeight: '1.5' }}>
+                  <Text size="3" style={{ color: '#1565c0', textAlign: 'center', lineHeight: '1.5' }}>
                     Work with freelancers from anywhere in the world without borders
                   </Text>
                 </Flex>
@@ -140,7 +140,7 @@ export function LandingPage() {
                     <CheckIcon style={{ width: '32px', height: '32px', color: 'white' }} />
                   </div>
                   <Text size="5" weight="bold" style={{ color: '#1a1a1a' }}>Reliable</Text>
-                  <Text size="3" style={{ color: '#666', textAlign: 'center', lineHeight: '1.5' }}>
+                  <Text size="3" style={{ color: '#1565c0', textAlign: 'center', lineHeight: '1.5' }}>
                     Smart contracts ensure payments are executed as agreed
                   </Text>
                 </Flex>
@@ -185,7 +185,7 @@ export function LandingPage() {
                     <Text size="4" weight="bold" style={{ color: 'white' }}>1</Text>
                   </div>
                   <Text size="5" weight="bold" style={{ color: '#1a1a1a' }}>Submit Invoice</Text>
-                  <Text size="3" style={{ color: '#666', lineHeight: '1.5' }}>
+                  <Text size="3" style={{ color: '#1565c0', lineHeight: '1.5' }}>
                     Freelancers submit invoices with payment details and project information
                   </Text>
                 </Flex>
@@ -212,7 +212,7 @@ export function LandingPage() {
                     <Text size="4" weight="bold" style={{ color: 'white' }}>2</Text>
                   </div>
                   <Text size="5" weight="bold" style={{ color: '#1a1a1a' }}>Admin Review</Text>
-                  <Text size="3" style={{ color: '#666', lineHeight: '1.5' }}>
+                  <Text size="3" style={{ color: '#1565c0', lineHeight: '1.5' }}>
                     Authorized administrators review and approve payment requests
                   </Text>
                 </Flex>
@@ -239,7 +239,7 @@ export function LandingPage() {
                     <Text size="4" weight="bold" style={{ color: 'white' }}>3</Text>
                   </div>
                   <Text size="5" weight="bold" style={{ color: '#1a1a1a' }}>Secure Payment</Text>
-                  <Text size="3" style={{ color: '#666', lineHeight: '1.5' }}>
+                  <Text size="3" style={{ color: '#1565c0', lineHeight: '1.5' }}>
                     Payments are processed securely through the Sui blockchain
                   </Text>
                 </Flex>

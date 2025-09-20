@@ -30,6 +30,22 @@ function App() {
           backgroundSize: 'auto',
           opacity: 0.7
         }} />
+        {/* Sui Drop image in the absolute center, above background but below content */}
+        <img
+          src="/sui-drop.png"
+          alt="Sui Drop"
+          style={{
+            position: 'absolute',
+            left: '50%',
+            top: '50%',
+            transform: 'translate(-50%, -50%)',
+            zIndex: 1,
+            pointerEvents: 'none',
+            width: '320px',
+            maxWidth: '60vw',
+            opacity: 0.5
+          }}
+        />
         <div style={{ position: 'relative', zIndex: 2, display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
           <Navbar />
           <main style={{ flex: 1 }}>

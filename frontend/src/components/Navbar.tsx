@@ -40,18 +40,19 @@ export function Navbar() {
         <Flex justify="between" align="center" style={{ height: '64px' }}>
           {/* Logo and Project Name */}
           <Flex align="center" gap="3">
-            <div style={{
-              width: '40px',
-              height: '40px',
-              background: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',
-              borderRadius: '12px',
-              display: 'flex',
-              alignItems: 'center',
-              justifyContent: 'center',
-              boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
-            }}>
-              <Text size="4" weight="bold" style={{ color: 'white' }}>S</Text>
-            </div>
+            <Link to="/" style={{ display: 'flex', alignItems: 'center' }}>
+              <img
+                src="/SuimmingPay-logo.png"
+                alt="SuimmingPay Logo"
+                style={{
+                  width: '40px',
+                  height: '40px',
+                  objectFit: 'contain',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 8px rgba(0,0,0,0.2)'
+                }}
+              />
+            </Link>
             <Text size="6" weight="bold" style={{ color: '#1a1a1a' }}>
               Sui-mmingPay - Secure Payroll Payments for Freelancers
             </Text>
