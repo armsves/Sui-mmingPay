@@ -1,5 +1,7 @@
 import { Ntt } from "@wormhole-foundation/sdk-definitions-ntt";
 import { Chain, encoding } from "@wormhole-foundation/sdk";
+import dotenv from "dotenv";
+dotenv.config();
 
 export type NttContracts = {
   [key in Chain]?: Ntt.Contracts;
@@ -9,14 +11,14 @@ export const SEPOLIA_PRIVATE_KEY = process.env.SEPOLIA_PRIVATE_KEY || "";
 export const TESTNET_SUI_MNEMONIC = process.env.TESTNET_SUI_MNEMONIC || ""; 
 
 export const TEST_NTT_TOKENS: NttContracts = {
-  Solana: {
-    token: "ANRdVy8fvhiJqXccFPpZijty5jQqkBp5Xjw4NXL1CsU1",
-    manager: "nasiB9hbB1s5ZWXAR54fjr3Y4HVTTzJMXNPAuedggQA",
-    transceiver: {
-      wormhole: "Ba8FkdiKmNuGiwiZ6PVzkyR7uE2kMGV1aAYUh3XReLuA",
-    },
-    quoter: "Nqd6XqA8LbsCuG8MLWWuP865NV6jR1MbXeKxD4HLKDJ"
-  },
+  // Solana: {
+  //   token: "ANRdVy8fvhiJqXccFPpZijty5jQqkBp5Xjw4NXL1CsU1",
+  //   manager: "nasiB9hbB1s5ZWXAR54fjr3Y4HVTTzJMXNPAuedggQA",
+  //   transceiver: {
+  //     wormhole: "Ba8FkdiKmNuGiwiZ6PVzkyR7uE2kMGV1aAYUh3XReLuA",
+  //   },
+  //   quoter: "Nqd6XqA8LbsCuG8MLWWuP865NV6jR1MbXeKxD4HLKDJ"
+  // },
   Sepolia: {
     token: "0x528007Fab32134522c44757E31a6d22ba433b5a8",
     manager: "0xBaaB509AAd2fC0b041669A86750631AA76688BeB",
