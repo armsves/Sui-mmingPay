@@ -9,6 +9,9 @@
 cd token-evm
 
 # Deploy the token
+source .env && forge create --broadcast --rpc-url https://base-sepolia.drpc.org --private-key ${PRIVATE_KEY} src/PeerToken.sol:PeerToken --constructor-args "TestBurnToken" "TBT" ${DEPLOYER_ADDRESS} ${DEPLOYER_ADDRESS}
+
+# Deploy the token
 source .env && forge create --broadcast --rpc-url https://1rpc.io/sepolia --private-key ${PRIVATE_KEY} src/PeerToken.sol:PeerToken --constructor-args "TestBurnToken" "TBT" ${DEPLOYER_ADDRESS} ${DEPLOYER_ADDRESS}
 ```
 

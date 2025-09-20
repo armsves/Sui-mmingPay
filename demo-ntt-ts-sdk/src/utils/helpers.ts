@@ -29,6 +29,7 @@ import { NttExecutorRoute, NttRoute } from "@wormhole-foundation/sdk-route-ntt";
   
     let signer: Signer;
     const platform = chainToPlatform(chain.chain);
+    console.log("Platform: ", platform);
     switch (platform) {
       case "Evm":
         signer = await evm.getSigner(
