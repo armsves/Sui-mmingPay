@@ -5,7 +5,7 @@ import { ExternalLinkIcon, GitHubLogoIcon } from '@radix-ui/react-icons';
 export function Footer() {
     return (
         <footer style={{
-            backgroundColor: 'transparent',
+            backgroundColor: 'rgba(255,255,255,0.30)',
             borderTop: 'none',
             boxShadow: 'none',
             padding: '10px 0'
@@ -16,7 +16,7 @@ export function Footer() {
                     <Flex gap="12" align="center" wrap="wrap" justify="center">
                         {/* Powered by section */}
                         <Flex gap="6" align="center" wrap="wrap">
-                            <Text size="4" weight="medium" style={{ color: '#495057' }}>
+                            <Text size="4" weight="medium" style={{ color: '#1565c0' }}>
                                 Powered by:
                             </Text>
 
@@ -72,13 +72,13 @@ export function Footer() {
                                     }}
                                 />
                             </Flex>
-                            <RadixLink href="https://github.com/armsves/Sui-mmingPay" target="_blank" style={{ color: '#6c757d', transition: 'color 0.2s', textDecoration: 'none' }}>
+                            <RadixLink href="https://github.com/armsves/Sui-mmingPay" target="_blank" style={{ color: '#1565c0', transition: 'color 0.2s', textDecoration: 'none' }}>
                                 <Flex align="center" gap="1" style={{ transition: 'transform 0.2s' }}>
                                     <GitHubLogoIcon style={{ width: '28px', height: '28px' }} />
                                 </Flex>
                             </RadixLink>
 
-                            <RadixLink href="https://x.com/armsves" target="_blank" style={{ color: '#6c757d', transition: 'color 0.2s', textDecoration: 'none' }}>
+                            <RadixLink href="https://x.com/armsves" target="_blank" style={{ color: '#1565c0', transition: 'color 0.2s', textDecoration: 'none' }}>
                                 <Flex align="center" gap="1" style={{ transition: 'transform 0.2s' }}>
                                     {/* X (formerly Twitter) Logo */}
                                     <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor">
@@ -91,7 +91,7 @@ export function Footer() {
                     </Flex>
 
                     {/* Copyright */}
-                    <Text size="2" style={{ color: '#6c757d', textAlign: 'center' }}>
+                    <Text size="2" style={{ color: '#1565c0', textAlign: 'center' }}>
                         © 2025 Sui-mmingPay. A freelancer payroll system on Sui blockchain.
                     </Text>
                 </Flex>
