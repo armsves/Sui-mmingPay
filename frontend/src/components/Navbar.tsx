@@ -73,12 +73,13 @@ export function Navbar() {
               </Button>
             </Link>
             <Link to="/admin" style={{ textDecoration: 'none' }}>
-              <Button size="4" variant="outline" style={{
-                borderColor: '#1976d2',
-                color: '#1976d2',
+              <Button size="4" style={{
+                background: 'linear-gradient(135deg, #1976d2 0%, #1565c0 100%)',
+                color: 'white',
                 padding: '12px 32px',
-                boxShadow: '0 4px 12px rgba(0,0,0,0.1)',
-                transition: 'all 0.2s'
+                boxShadow: '0 4px 12px rgba(0,0,0,0.2)',
+                transition: 'all 0.2s',
+                border: 'none'
               }}>
                 Admin Portal
               </Button>

@@ -5,11 +5,7 @@ import { CheckIcon, LightningBoltIcon, LockClosedIcon, GlobeIcon } from '@radix-
 
 export function LandingPage() {
   return (
-    <div style={{
-      background: 'rgba(255, 255, 255, 0.2)',
-      minHeight: '100vh',
-      backdropFilter: 'blur(10px)'
-    }}>
+    <div>
       <Container size="4" style={{ padding: '24px 24px' }}>
         <Flex direction="column" gap="12" align="center">
           {/* Hero Section */}
@@ -44,9 +40,9 @@ export function LandingPage() {
             }}>
               <Card style={{ 
                 padding: '32px', 
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                backgroundColor: 'rgba(173, 216, 230, 0.8)',
                 backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
-                border: '1px solid rgba(255,255,255,0.3)',
+                border: '1px solid rgba(173,216,230,0.3)',
                 transition: 'transform 0.2s, box-shadow 0.2s'
               }}>
                 <Flex direction="column" align="center" gap="4">
@@ -71,9 +67,9 @@ export function LandingPage() {
 
               <Card style={{ 
                 padding: '32px', 
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                backgroundColor: 'rgba(173, 216, 230, 0.8)', // light blue with opacity
                 backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
-                border: '1px solid rgba(255,255,255,0.3)',
+                border: '1px solid rgba(173,216,230,0.3)',
                 transition: 'transform 0.2s, box-shadow 0.2s'
               }}>
                 <Flex direction="column" align="center" gap="4">
@@ -98,9 +94,9 @@ export function LandingPage() {
 
               <Card style={{ 
                 padding: '32px', 
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                backgroundColor: 'rgba(173, 216, 230, 0.8)', // light blue with opacity
                 backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
-                border: '1px solid rgba(255,255,255,0.3)',
+                border: '1px solid rgba(173,216,230,0.3)',
                 transition: 'transform 0.2s, box-shadow 0.2s'
               }}>
                 <Flex direction="column" align="center" gap="4">
@@ -125,9 +121,9 @@ export function LandingPage() {
 
               <Card style={{ 
                 padding: '32px', 
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                backgroundColor: 'rgba(173, 216, 230, 0.8)', // light blue with opacity
                 backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
-                border: '1px solid rgba(255,255,255,0.3)',
+                border: '1px solid rgba(173,216,230,0.3)',
                 transition: 'transform 0.2s, box-shadow 0.2s'
               }}>
                 <Flex direction="column" align="center" gap="4">
@@ -170,9 +166,9 @@ export function LandingPage() {
             }}>
               <Card style={{ 
                 padding: '32px', 
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                backgroundColor: 'rgba(173, 216, 230, 0.8)', // light blue with opacity
                 backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
-                border: '1px solid rgba(255,255,255,0.3)' 
+                border: '1px solid rgba(173,216,230,0.3)'
               }}>
                 <Flex direction="column" gap="4">
                   <div style={{
@@ -197,9 +193,9 @@ export function LandingPage() {
 
               <Card style={{ 
                 padding: '32px', 
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                backgroundColor: 'rgba(173, 216, 230, 0.8)', // light blue with opacity
                 backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
-                border: '1px solid rgba(255,255,255,0.3)' 
+                border: '1px solid rgba(173,216,230,0.3)'
               }}>
                 <Flex direction="column" gap="4">
                   <div style={{
@@ -224,9 +220,9 @@ export function LandingPage() {
 
               <Card style={{ 
                 padding: '32px', 
-                backgroundColor: 'rgba(255, 255, 255, 0.8)', 
+                backgroundColor: 'rgba(173, 216, 230, 0.8)', // light blue with opacity
                 backdropFilter: 'blur(10px)', boxShadow: '0 8px 32px rgba(0,0,0,0.1)', 
-                border: '1px solid rgba(255,255,255,0.3)' 
+                border: '1px solid rgba(173,216,230,0.3)'
               }}>
                 <Flex direction="column" gap="4">
                   <div style={{

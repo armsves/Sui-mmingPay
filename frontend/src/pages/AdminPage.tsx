@@ -34,7 +34,6 @@ export function AdminPage() {
   if (!currentAccount) {
     return (
       <div style={{
-        background: 'rgba(255, 255, 255, 0.1)',
         minHeight: '100vh',
         padding: '64px 0',
         backdropFilter: 'blur(5px)'
@@ -65,7 +64,6 @@ export function AdminPage() {
   if (!isAdmin) {
     return (
       <div style={{
-        background: 'rgba(255, 255, 255, 0.1)',
         minHeight: '100vh',
         padding: '64px 0',
         backdropFilter: 'blur(5px)'
@@ -73,7 +71,6 @@ export function AdminPage() {
         <Container size="3">
           <Card style={{
             padding: '48px',
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
             backdropFilter: 'blur(10px)',
             boxShadow: '0 20px 40px rgba(0,0,0,0.1)',
             border: '1px solid rgba(255,255,255,0.3)'
@@ -108,7 +105,6 @@ export function AdminPage() {
 
   return (
     <div style={{
-      background: 'rgba(255, 255, 255, 0.1)',
       minHeight: '100vh',
       padding: '64px 0',
       backdropFilter: 'blur(5px)'
@@ -118,8 +114,6 @@ export function AdminPage() {
           {/* Admin Header */}
           <Card style={{
             padding: '32px',
-            background: 'linear-gradient(135deg, rgba(76, 175, 80, 0.1) 0%, rgba(129, 199, 132, 0.1) 100%)',
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
             backdropFilter: 'blur(10px)',
             border: '1px solid rgba(76, 175, 80, 0.3)',
             boxShadow: '0 8px 24px rgba(0,0,0,0.1)'
@@ -140,7 +134,6 @@ export function AdminPage() {
           {/* Pending Invoices */}
           <Card style={{
             padding: '32px',
-            backgroundColor: 'rgba(255, 255, 255, 0.9)',
             backdropFilter: 'blur(10px)',
             boxShadow: '0 8px 24px rgba(0,0,0,0.1)',
             border: '1px solid rgba(255,255,255,0.3)'
@@ -170,7 +163,6 @@ export function AdminPage() {
                   {pendingInvoices.map((invoice) => (
                     <Card key={invoice.id} style={{
                       padding: '24px',
-                      backgroundColor: 'rgba(255, 255, 255, 0.8)',
                       border: '1px solid rgba(229, 229, 229, 0.5)',
                       transition: 'transform 0.2s, box-shadow 0.2s'
                     }}>
