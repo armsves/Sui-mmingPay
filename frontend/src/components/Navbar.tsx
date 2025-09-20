@@ -25,24 +25,6 @@ function WalletConnectStyled() {
           boxShadow: isConnected ? '0 2px 8px #1976d233' : '0 2px 8px #1976d2',
         }}
       />
-      {isConnected && (
-        <span style={{
-          background: 'rgba(255,255,255,0.6)',
-          color: '#1976d2',
-          border: '2px solid #1976d2',
-          borderRadius: '999px',
-          padding: '6px 18px',
-          fontWeight: 600,
-          fontSize: '15px',
-          boxShadow: '0 2px 8px #1976d233',
-          marginLeft: '4px',
-          fontFamily: 'Inter, Poppins, Open Sans, Arial, sans-serif',
-          letterSpacing: '0.02em',
-          backdropFilter: 'blur(6px)',
-        }}>
-          {account.address.slice(0, 6)}...{account.address.slice(-4)}
-        </span>
-      )}
     </div>
   );
 }
