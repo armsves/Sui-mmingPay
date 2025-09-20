@@ -1,37 +1,17 @@
 {
   "network": "Testnet",
   "chains": {
-    "Sui": {
-      "version": "dev",
-      "mode": "locking",
-      "paused": false,
-      "owner": "0x9aa84eab6663d054a047d2debae9ca1d2a571bb421600c2f1f3162ae2bde91eb",
-      "manager": "0xb163cfaee9a596410d2997500783f1756332c2391dcf894bd3ddd6cf301e8592",
-      "token": "0x25172c5f5f4ab0dab2da33d71013eafc44a37e171d18fec9c1598ca77859eda0::my_coin::MY_COIN",
-      "transceivers": {
-        "threshold": 1,
-        "wormhole": {
-          "address": "0x78d7c303fc44f8ba8ccb85bc8424745796e1472bd2d6c873d7d0b0c32fe227cb",
-          "executor": true
-        }
-      },
-      "limits": {
-        "outbound": "18446744073.709551615",
-        "inbound": {}
-      },
-      "pauser": "0x9aa84eab6663d054a047d2debae9ca1d2a571bb421600c2f1f3162ae2bde91eb"
-    },
     "Sepolia": {
       "version": "1.1.0",
       "mode": "burning",
       "paused": false,
       "owner": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125",
-      "manager": "0xBaaB509AAd2fC0b041669A86750631AA76688BeB",
-      "token": "0x528007Fab32134522c44757E31a6d22ba433b5a8",
+      "manager": "0x91E65a5b7633A3cC42F228776aDf041ef35fcaCA",
+      "token": "0x74A786d6d0397B44d49F9feA1bcD9FC8286D9046",
       "transceivers": {
         "threshold": 1,
         "wormhole": {
-          "address": "0xCa4CE8D0399502F9BfEDB573Ce57aCFCA2B94caB",
+          "address": "0xcACefe0FFC02875bEB27E3EC1C5C6eDB5e9e6184",
           "pauser": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125",
           "executor": true
         }
@@ -41,6 +21,26 @@
         "inbound": {}
       },
       "pauser": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125"
+    },
+    "Sui": {
+      "version": "dev",
+      "mode": "locking",
+      "paused": false,
+      "owner": "0x6e0103f11615a9f3c7452ba1b341b083c56a0ac1bdc898798fb8ce424c4de9b8",
+      "manager": "0xd6183bf59ec3c9fb8bb06c86ee8a524c7f74575f2fc7632466699e53ffd47ab6",
+      "token": "0xa6b1ccc3420deb74565a67da7a2d50c1c73d69332e71fd4fb9a168470504fd6d::my_coin::MY_COIN",
+      "transceivers": {
+        "threshold": 1,
+        "wormhole": {
+          "address": "0x3c2ff0ae785dd90f49615812967320901f7a642fd519dbde5e9efa0e98f2c33c",
+          "executor": true
+        }
+      },
+      "limits": {
+        "outbound": "18446744073.709551615",
+        "inbound": {}
+      },
+      "pauser": "0x6e0103f11615a9f3c7452ba1b341b083c56a0ac1bdc898798fb8ce424c4de9b8"
     }
   }
 }

@@ -20,13 +20,13 @@ export const TEST_NTT_TOKENS: NttContracts = {
   //   quoter: "Nqd6XqA8LbsCuG8MLWWuP865NV6jR1MbXeKxD4HLKDJ"
   // },
   Sepolia: {
-    token: "0x528007Fab32134522c44757E31a6d22ba433b5a8",
-    manager: "0xBaaB509AAd2fC0b041669A86750631AA76688BeB",
-    transceiver: { wormhole: "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125" },
+    token: "0x74A786d6d0397B44d49F9feA1bcD9FC8286D9046",
+    manager: "0x91E65a5b7633A3cC42F228776aDf041ef35fcaCA",
+    transceiver: { wormhole: "0xcACefe0FFC02875bEB27E3EC1C5C6eDB5e9e6184" },
   },
   Sui: {
-    token: "0x25172c5f5f4ab0dab2da33d71013eafc44a37e171d18fec9c1598ca77859eda0::my_coin::MY_COIN",
-    manager: "0xb163cfaee9a596410d2997500783f1756332c2391dcf894bd3ddd6cf301e8592",
-    transceiver: { wormhole: "0x78d7c303fc44f8ba8ccb85bc8424745796e1472bd2d6c873d7d0b0c32fe227cb" },
+    token: "0x21c6c84e85ff87bc62bcc70e4cbc6fa2492050465921aa1399350f7fa2b45321::my_coin::MY_COIN",
+    manager: "0x54f201c1d5fcfe674cea78bde237558b6ac9053c034d055e50a43465d832f09d",
+    transceiver: { wormhole: "0x363f70428683d3a3844e95dde224045cacdeb77de69c946851a58779ff40f4c6" },
   },
 };
