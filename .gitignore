@@ -4,3 +4,5 @@
 /ntt-token-sui/build
 .DS_Store
 Move.lock
+
+.env

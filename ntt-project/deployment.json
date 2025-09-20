@@ -20,6 +20,27 @@
         "inbound": {}
       },
       "pauser": "0x9aa84eab6663d054a047d2debae9ca1d2a571bb421600c2f1f3162ae2bde91eb"
+    },
+    "Sepolia": {
+      "version": "1.1.0",
+      "mode": "burning",
+      "paused": false,
+      "owner": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125",
+      "manager": "0xBaaB509AAd2fC0b041669A86750631AA76688BeB",
+      "token": "0x528007Fab32134522c44757E31a6d22ba433b5a8",
+      "transceivers": {
+        "threshold": 1,
+        "wormhole": {
+          "address": "0xCa4CE8D0399502F9BfEDB573Ce57aCFCA2B94caB",
+          "pauser": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125",
+          "executor": true
+        }
+      },
+      "limits": {
+        "outbound": "184467440737.095516150000000000",
+        "inbound": {}
+      },
+      "pauser": "0xA830Cd34D83C10Ba3A8bB2F25ff8BBae9BcD0125"
     }
   }
 }
